@@ -53,11 +53,10 @@ class ClientContextService
     public function getClient()
     {
         if (!$this->resolvedClient) {
-            if (!$this->httpContextService->hasContext()) {
+            $httpContext = $this->httpContextService->getContext();
+            if (!$httpContext) {
                 throw ClientContextException::noContext();
             }
-
-            $httpContext = $this->httpContextService->getContext();
             $client = $this->resolveClientByHttpContext($httpContext);
 
             if (!$client) {
@@ -86,6 +85,7 @@ class ClientContextService
         if ($this->resolvedContext) {
             return $this->resolvedContext->getClient();
         }
+
         return null;
     }
 }

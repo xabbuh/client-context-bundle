@@ -35,21 +35,19 @@ class ClientContextDataCollector extends DataCollector
      * @param Response   $response  A Response instance
      * @param \Exception $exception An Exception instance
      */
-    function collect(Request $request, Response $response, \Exception $exception = null)
+    public function collect(Request $request, Response $response, \Exception $exception = null)
     {
-        $contextClientShort = null;
-        $contextClientLong = null;
+        $contextClientShort = '###ERR###';
         try {
             $contextClientShort = $this->clientContextService->getClient()->getTitle();
             $contextClientLong = $contextClientShort;
         } catch (ClientContextException $e) {
-            $contextClientShort = '###ERR###';
             $contextClientLong = $e->getMessage();
         }
 
         $this->data = array(
             'clientContextShort' => $contextClientShort,
-            'clientContextLong' => $contextClientLong
+            'clientContextLong'  => $contextClientLong
         );
     }
 
@@ -74,7 +72,7 @@ class ClientContextDataCollector extends DataCollector
      *
      * @return string The collector name
      */
-    function getName()
+    public function getName()
     {
         return 'clientContext';
     }

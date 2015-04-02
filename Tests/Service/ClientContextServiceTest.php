@@ -48,10 +48,6 @@ class ClientContextServiceTest extends \PHPUnit_Framework_TestCase
     private function getHttpContextServiceMock($hasContext)
     {
         $service = $this->getMock('Openroot\Bundle\HttpContextBundle\Service\HttpContextService', ['hasContext', 'getContext']);
-        $service
-            ->expects($this->once())
-            ->method('hasContext')
-            ->willReturn((bool)$hasContext);
         if ($hasContext) {
             $service
                 ->expects($this->once())
