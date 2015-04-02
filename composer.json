@@ -1,0 +1,21 @@
+{
+  "name": "openroot/client-context-bundle",
+  "description": "Define client entites",
+  "keywords": ["context", "client based"],
+  "type": "bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Simon Schröer",
+      "email": "code@sweikenb.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4",
+    "symfony/symfony": ">=2.3,<3.0"
+  },
+  "autoload": {
+    "psr-0": {"Openroot\\Bundle\\ClientContextBundle": ""}
+  },
+  "target-dir": "Openroot/Bundle/ClientContextBundle"
+}
