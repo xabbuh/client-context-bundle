@@ -12,7 +12,8 @@
   ],
   "require": {
     "php": ">=5.4",
-    "symfony/symfony": ">=2.3,<3.0"
+    "symfony/symfony": ">=2.3,<3.0",
+    "openroot/http-context-bundle": ">=0.0.1"
   },
   "autoload": {
     "psr-0": {"Openroot\\Bundle\\ClientContextBundle": ""}
