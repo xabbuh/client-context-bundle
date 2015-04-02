@@ -5,18 +5,8 @@ services:
         factory_method: getRepository
         arguments: ["Openroot\Bundle\ClientContextBundle\Entity\Client" ]
 
-    openroot.clientContext.entity.client.manager:
-        class:     Doctrine\ORM\EntityRepository
-        factory:   ["@doctrine.orm.entity_manager", getRepository]
-        arguments: ["Openroot\Bundle\ClientContextBundle\Entity\Client" ]
-
     openroot.clientContext.entity.clientHttpContext.repository:
         class: Doctrine\Common\Persistence\ObjectRepository
         factory_service: doctrine
         factory_method: getRepository
-        arguments: ["Openroot\Bundle\ClientContextBundle\Entity\ClientHttpContext"]
-
-    openroot.clientContext.entity.clientHttpContext.manager:
-        class:     Doctrine\ORM\EntityRepository
-        factory:   ["@doctrine.orm.entity_manager", getRepository]
         arguments: ["Openroot\Bundle\ClientContextBundle\Entity\ClientHttpContext"]
