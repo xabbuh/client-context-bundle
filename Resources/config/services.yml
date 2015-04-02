@@ -1,0 +1,11 @@
+services:
+    openroot.clientContext.service:
+      class: Openroot\Bundle\ClientContextBundle\Service\ClientContextService
+      arguments: [@openroot.httpContext.service, @openroot.clientContext.entity.clientHttpContext.repository]
+
+    openroot.clientContext.profiler.dataCollector:
+      class: Openroot\Bundle\ClientContextBundle\Profiler\ClientContextDataCollector
+      calls:
+          - [setClientContextService, [@openroot.clientContext.service]]
+      tags:
+          - { name: data_collector, template: "OpenrootClientContextBundle:Profiler:clientContext.html.twig", id: "clientContext" }

@@ -1,0 +1,15 @@
+{% extends 'WebProfilerBundle:Profiler:layout.html.twig' %}
+
+{% block toolbar %}
+    {% set icon %}
+    <img width="26" height="28" alt="ClientContext" style="border-width: 0; vertical-align: middle; margin-right: 5px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAcCAYAAAB/E6/TAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAAYdEVYdENyZWF0aW9uIFRpbWUAMDIuMDQuMjAxNWQAWPoAAAOZSURBVEiJ7VbNSutaGF1pmmyTtKYVFS3YQTMoZyAWp50JFnwAnYgzoS8gCs4dORNHzvIKKjoRWymKQqW0VgQtSgcqdqRNf9Mk3x14jFbPwd7L5Qwu94OdQb6199ore+1FOCLCnyjPH2H5TxJ5AYDjuG+BGxsb9Pj4CEmSQERot9uIxWKYm5v7djIR/Xx8U5ubmwTgyxBFkU5OTr5dgIheFX1XtVoNPM8jHA6D53lwHAfDMPDy8oJqtdrLEr2dkaIo4HkejuOAiNwhSRIkSeqJqCdFbwRA96d2HAeO4/RE1JOiVquFTqcDwzAAALZtwzAMVKtVWJb17xHFYjFEIhHwPO8qUhQF8Xgcmqb1RNST6wCgVCrR4eEhaZpGiUSCzs7Oes6unu39saLRKC0sLPytSb+098XFBaXTaQiCAJ7nXaAgCGi1WlhfX0e5XIau62RZVpcZTNMEYwyLi4tfLjFHRG4yFItFmp2dxd3dHQRB6FLr8XjgOA4GBwdhmiZqtZprc+A9XTqdDqanp7Gzs+OSfVGUy+VwdXWF5eVlTE1NodFouEBRFNFoNLC6uopoNIqlpSWYptlFJIoitra2kEqlkM/naWJi4l3Zx13v7+8TADo6OvrtGUSjUZqfn/9tf21tjVRV7eoT0bu9U6kUZbNZMMaQyWSQyWS6wLlcjra3t8myLFQqFRwcHNDNzU0XJpVK0eXlJfr6+qDrOp2enr73iQgrKysUCARoZGSENE2jUChEAwMDlEwmCQD29vYoFAqRqqoUiUQoHA6T3++nyclJd6F4PE6qqtLY2BhpmkbBYJCGh4dJ13VyFWWzWTw/P4Mx5m6gWq0in88DAG5vb/Hw8ACv9/VI34xRKBRwfHxMAFAsFrtSQpZlVCoVFAoFAD+zTpZlMMYgSRLa7TYYY1AUBX6/HwAgSRK8Xi98Ph8AgOd5+Hw+MMYgiiIAIBgMotlswuv1goggy7I71yXyeDyuPTmO6xq/eve5/xnzcT2P59UGHgAwDMNN4rdLaFmWG6L1eh22bYOIYNu2i63X62i32y7GcRzYtg3Lslw312q1d0VDQ0MwTRPX19cfTYT+/n4AQCAQgOM4KJfLXX1FURAMBgEAgiDg/v4en2t0dPRVMRGhVCrR7u4uiAiMMXf3iUQCP3784ABA13V6enqCLMsgIjSbTYyPj2NmZoYDgHQ6Tefn52CMgeM41Ot1qKqKZDL5mj7//0D+0/oLNDj2yyH0hXIAAAAASUVORK5CYII="/>
+    <span class="sf-toolbar-status">{{ collector.clientContextShort }}</span>
+    {% endset %}
+    {% set text %}
+    <div class="sf-toolbar-info-piece">
+        <b>Context</b>
+        <span>{{ collector.clientContextLong }}</span>
+    </div>
+    {% endset %}
+    {% include 'WebProfilerBundle:Profiler:toolbar_item.html.twig' with { 'link': profiler_url } %}
+{% endblock %}
